@@ -14,8 +14,7 @@ const serverlessConfiguration: Serverless = {
             includeModules: true
         }
     },
-    // Add the serverless-webpack plugin
-    plugins: ['serverless-webpack', 'serverless-offline'], //"serverless-basic-authentication"
+    plugins: ['serverless-webpack', 'serverless-offline'],
     provider: {
         name: 'aws',
         region: 'sa-east-1',
@@ -96,17 +95,6 @@ const serverlessConfiguration: Serverless = {
     },
     resources: {
         Resources: {
-            // GatewayResponse: {
-            //     Type: "AWS::ApiGateway::GatewayResponse",
-            //     Properties: {
-            //         ResponseParameters:
-            //             { "gatewayresponse.header.WWW-Authenticate": "'Basic'" },
-            //         ResponseType: "UNAUTHORIZED",
-            //         RestApiId:
-            //             { Ref: "ApiGatewayRestApi" },
-            //         StatusCode: '401'
-            //     }
-            // },
             MainTable: {
                 Type: 'AWS::DynamoDB::Table',
                 DeletionPolicy: 'Retain',
